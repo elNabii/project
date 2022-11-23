@@ -33,6 +33,26 @@
 
  const category = 'toys';
 
- console.log('https//someurl.com/' + category)
+ console.log('https//someurl.com/' + category);
 
  console.log(`https//someurl.com/${category}/5`);
+
+ console.log('arr'+'-object');
+
+ // ИНКРИМЕНТ и ДИСКРЕМЕНТ
+ let incr = 10,
+    decr =10;
+
+incr++;
+decr--;
+
+//ОПЕРАТОРЫ И и ИЛИ
+// && - И
+// || - ИЛИ
+
+//ОПЕРАТОР ОТРИЦАНИЯ
+// !=, !==, 
+//const fff = false;
+// console.log(!fff);
+
+ 
