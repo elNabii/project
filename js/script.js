@@ -293,19 +293,181 @@
 //  *********
 // ***********
 
-const lines = 5;
-let result = '';
+// const lines = 5;
+// let result = '';
 
-for (let i = 0; i <= lines; i++) {
-    for (let j = 0; j < lines - i; j++) {
-       result += ' ';
-    }
-    for (let j = 0; j < 2 * i + 1; j++) {
-      result += '*';
+// for (let i = 0; i <= lines; i++) {
+//     for (let j = 0; j < lines - i; j++) {
+//        result += ' ';
+//     }
+//     for (let j = 0; j < 2 * i + 1; j++) {
+//       result += '*';
+//    }
+
+//     result += '\n'; 
+//  }
+
+//  console.log(result);
+
+
+//ФУНКЦИИ 
+
+// let num = 20;
+
+// function showFirstMessage(text) {  
+//    console.log(text);
+//    num = 10; 
+// }
+
+// showFirstMessage('Hello World');
+
+
+//  function createCounter() {
+//    let counter = 0;
+//    const myFunction = function() {
+//      counter = counter + 1;
+//      return counter;
+//    };
+//    return myFunction;
+//  }
+//  const increment = createCounter();
+//  const c1 = increment();
+//  const c2 = increment();
+//  const c3 = increment();
+//   console.log('example increment', c1, c2, c3);
+
+//   1: function createCounter() {
+//    2:   let counter = 0
+//    3:   const myFunction = function() {
+//    4:     counter = counter + 1
+//    5:     return counter
+//    6:   }
+//    7:   return myFunction
+//    8: }
+//    9: const increment = createCounter()
+//   10: const c1 = increment()
+//   11: const c2 = increment()
+//   12: const c3 = increment()
+//   13: console.log('example increment', c1, c2, c3)
+
+function calc(a, b) {
+   return (a + b);
+}
+
+console.log(calc(4, 3));
+console.log(calc(5, 6));
+console.log(calc(10, 6));
+
+function ret() {
+   let num = 50;
+   return num;
+}
+
+const anotherNum = ret();
+console.log(anotherNum);
+
+
+//Function Expression
+let logger = function() {
+   console.log('Hello');
+};
+
+logger();
+
+//Стрелочные функции
+const vit = (a, b) => a + b;
+
+const buble = (a, b) => {
+   console.log('1');
+   return a + b;
+};
+
+// Аргементы функции 
+
+const usdCurr = 28;
+const discount = 0.9;
+
+function convert(amount, curr) {
+   return curr * amount;
+}
+
+function promotion(result) {
+   console.log(result * discount);
+}
+
+promotion(convert(500, usdCurr));
+
+
+function test() {
+   for (let i = 0; i < 5; i++) {
+      console.log(i);
+      if (i === 3) return
+   }
+   console.log('Done');
+}
+
+test();
+
+function doNothing() {};
+console.log(doNothing() === undefined);
+
+
+// 1) Создайте функцию, которая будет на вход принимать 1 аргумент 
+// с именем человека и возвращать строку.
+// Пример: вызов функции sayHello('Антон') возвращает строку 
+// "Привет, Антон!". В решении вызывать функцию не нужно, программа 
+// сделает это за вас.
+// P.S. возвращать - это использовать ключевое слово return
+// P.S.S. Это классическая функция-модификатор, которых мы дальше 
+// по курсу будем создавать еще много в разных видах.
+
+function sayHello(name) {
+   return `Привет, ${name}!`;
+}
+
+console.log(sayHello('Алекс'));
+
+
+// 2) Создайте функцию, которая принимает в себя 1 аргумент в виде целого
+// числа и возвращает массив из трех чисел: одно на 1 меньше, сам 
+// аргумент, и число на 1 больше.
+// Пример: вызов функции returnNeighboringNumbers(5) возвращает массив
+//  в виде [4, 5, 6].
+
+function arr(num) {
+   return [num - 1, num, num + 1];
+}
+
+console.log(arr(5));
+
+
+// 3) Создайте функцию, которая будет принимать в себя 2 аргумента, оба
+// числа. Первое число - это база, второе число - это сколько раз нужно
+// будет повторить это число в прогрессии. (Смотри пример ниже). 
+// Функция должна возвращать строку (или число в особых случаях, о 
+// которых ниже), где эти числа идут по порядку, разделенные тремя 
+// дефисами "---". После последнего числа их не должно быть.
+
+// Если второй аргумент не является числом, равен или меньше нуля - то 
+// возвращать просто первый аргумент. (Проверяем через оператор typeof)
+
+function getMathResult(baza, pov) {
+   if (typeof pov !== 'number' || pov <= 0) {
+      return baza;
    }
 
-    result += '\n'; 
- }
+   let str = '';
 
- console.log(result);
+   for(let i = 1; i <= pov; i++) {
+      if (i === pov) {
+         str += `${baza * i}`;
+      } else {
+         str += `${baza * i}---`;
+      }
+   }
 
+   return str;
+
+}
+
+console.log(getMathResult(4, 0));
